@@ -1,32 +1,39 @@
 const question=document.getElementById('question');
 const inputBox = document.getElementById("input");
 const resultBox = document.getElementById("show");
-const points= document.getElementById("points");
 const submitBtn=document.getElementById('submit');
-const randomValue = question.innerHTML = Math.floor(Math.random() * 1001);                   
+const scoreBox = document.getElementById('#score');
+let randomValue = question.innerHTML=Math.floor(Math.random() * 1001);                   
 
 
+// ***** question generator  *****//
 function randChange() {
-    return  randomValue=question.innerHTML = Math.floor(Math.random() * 101);
+    setTimeout(()=>randomValue = question.innerHTML=Math.floor(Math.random() * 1001),2000);
 }
 
+
+//****  checking given question even/odd  ******//
 function checkEvenOdd() {
-    if (randomValue % 2 == 0)
+    if (randomValue % 2 == 0) {
         return 'even'
-    return 'odd'
-    //  return (randomValue % 2==0) ? 'even' : 'odd';
+    }else {
+        return 'odd'
+    }
 }        
 
+
+//******  points ******//
 let score=0;
 function pointShow(val){
      if (val == "Correct"){
-      points.innerHTML=(++score)+'';           // empty string concate with score it shows string formate    +''    //starts with 1
-     // points.innerHTML=(score++)+'';          // starts from 0
+        scoreBox.innerHTML = ++score;
+    //  scoreBox.innerHTML = score++;          // starts from 0
     }
 }
 
 
-function check() {
+//******  verify *******//
+function verify() {
     let userGuess = inputBox.value;
     let val;
 
@@ -36,11 +43,17 @@ function check() {
         val='Wrong';
     }
 
-    pointShow(val)
     resultBox.innerHTML = val;
-    setTimeout(() =>{resultBox.innerHTML=''},2000);
-    setTimeout(() =>{inputBox.value=''},2000);
-    setTimeout(() => {randChange(),10000})
-    // randChange()
+
+    pointShow(val)
+    randChange()
+
+    setTimeout(() =>{
+        resultBox.innerHTML='';
+        inputBox.value=''
+    },2000);
 }
-sub.addEventListener('click', check);
+submitBtn.addEventListener('click', verify);
+
+
+

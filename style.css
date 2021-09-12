@@ -89,22 +89,23 @@ input[type=text]:focus {
     text-align: center;
 
 }
-.points {
-    position: absolute;
-    right: 5rem;
-    top: 5rem;
-    width: 6rem;
-    font-size: 3rem;
-    border:double 10px rgb(247, 230, 230);
-    background-color: rgb(15, 14, 14);
-    color: blanchedalmond;
-    text-align: center;
-    padding: .6rem;
-    border-radius: 50%;
-}
+
 .lable {
     position: absolute;
     right: 6rem;
     top: 2.5rem;
     font-size: 2rem;
+}
+.score {
+    position: absolute;
+    right: 5rem;
+    top: 5rem;
+    width: 6rem;
+    height: 6rem;
+    font-size: 3rem;
+    border:double 10px rgb(247, 230, 230);
+    background-color: rgb(15, 14, 14);
+    color: blanchedalmond;
+    text-align: center;
+    border-radius: 50%;
 }
