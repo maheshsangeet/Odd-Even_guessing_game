@@ -37,9 +37,12 @@ function verify() {
     let userGuess = inputBox.value;
     let val;
 
-    if (userGuess == checkEvenOdd()){
+    if (userGuess === '') {
+        alert('Type even/odd')
+    }
+    else if (userGuess == checkEvenOdd()){
         val='Correct';
-    }else{
+    }else {
         val='Wrong';
     }
 
